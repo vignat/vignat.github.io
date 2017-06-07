@@ -1,0 +1,16 @@
+.github-avatar {
+    margin-up:10px;
+    margin-right: 10px;
+}
+
+.github-commit-author {
+    margin-right: 10px;
+}
+
+.github-commit-time {
+    float: right;
+}
+
+.github-commits-list {
+    list-style-type: none;
+}
