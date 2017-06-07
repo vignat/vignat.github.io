@@ -2,6 +2,7 @@
 layout: default_dynamic
 title: "Vigor: Trusted Software Networking"
 customcss:
+ - css/hyde.css
  - css/style.css
 customjs:
  - js/github.commits.widget.js
