@@ -1,6 +1,6 @@
 ---
 layout: default_dynamic
-title: "Vignat: Formally Verified Performant NAT"
+title: "VigNAT: A Formally Verified Performant NAT"
 customcss:
  - css/style.css
 customjs:
