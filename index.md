@@ -1,8 +1,7 @@
 ---
 layout: default_dynamic
-title: "Vigor: Trusted Software Networking"
+title: "Vignat: Formally Verified Performant NAT"
 customcss:
- - css/hyde.css
  - css/style.css
 customjs:
  - js/github.commits.widget.js
@@ -13,10 +12,7 @@ customjs:
 
 {::options parse_block_html="true" /}
 <div class="row">
-<div class="col-md-4">
-<img src="vigor-logo.svg" style="width: 100%; margin-top: 30px;" />
-</div>
-<div class="col-md-8">
+<div class="col-md-12">
 
 As a joint project of [NAL](https://nal.epfl.ch) and
 [DSLAB](https://dslab.epfl.ch), we strive towards enabling the development of
@@ -103,7 +99,7 @@ generalizing the approach starting from similar applications, such as
 </div>
 <div class="row">
 <div class="col-md-12">
-<img src="vigor-method.svg"  style="width: 100%;"/>
+<img src="images/vigor-method.svg"  style="width: 100%;"/>
 </div>
 </div>
 
