@@ -22,13 +22,13 @@ The first section was about priorities; from five options, respondents had to as
   - Responsiveness to malicious use
 
 We then asked them which language they would be willing to use to write line-rate packet-processing software:
-- Pure C99: 11
-- C99 with some safety restrictions (e.g. no `void*` casts): 9
-- Pure C++: 2
-- C++ with some safety restrictions (e.g. no raw pointers, no implicit type conversion): 5
-- A type-safe memory-safe language (e.g. Go, Rust, D): 3
-- Managed code (e.g. Java, C#, Python): 6
-- Any of the above, but with programmer-provided annotations (e.g. loop invariants, no-null qualifiers): 3 (2 of which also checked "Managed code", 1 of which checked "Pure C99" and "Pure C++")
+- **Pure C99**: 11
+- **C99 with some safety restrictions** (e.g. no `void*` casts): 9
+- **Pure C++**: 2
+- **C++ with some safety restrictions** (e.g. no raw pointers, no implicit type conversion): 5
+- **A type-safe memory-safe language** (e.g. Go, Rust, D): 3
+- **Managed code** (e.g. Java, C#, Python): 6
+- **Any of the above, but with programmer-provided annotations** (e.g. loop invariants, no-null qualifiers): 3 (2 of which also checked "Managed code", 1 of which checked "Pure C99" and "Pure C++")
 
 
 ### Full data
