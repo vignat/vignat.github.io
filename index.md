@@ -5,24 +5,16 @@ title: "VigNAT: A Formally Verified Performant NAT"
 
 ## {{ page.title }}
 
-{::options parse_block_html="true" /}
-<div class="row">
-<div class="col-md-12">
-
 VigNAT is a first fully verified [NAT][NAT] that does not compromise performance. Subject to common asumptions, we guarantee that VigNAT will never crush irregardless of the network traffic, and will follow the corresponding RFC(3022).
 
 Our aim is to increase the reliability of network functions. We plan to do that with formal software verification. [NAT][NAT] is a classic NAT is a clasic example of stateful network function.
 
-</div>
-</div>
+
 
 ### Overview
 
 #### Context
 
-{::options parse_block_html="true" /}
-<div class="row">
-<div class="col-md-8">
 Last decade is marked by a second coming of virtualization. The birth of cloud
 put a great demand on systems to be portable and replaceable. Now entire
 networks follow computing nodes and become virtualizable. That is how the SDN
@@ -38,17 +30,9 @@ certify complete and practical systems. Such systems as a [compiler](http://comp
 system [kernel](https://sel4.systems/), a distributed key value
 [store](https://github.com/Microsoft/Ironclad/tree/master/ironfleet) or a file
 [system](http://adam.chlipala.net/papers/FscqSOSP15/).
-</div>
-<div class="col-md-4">
-     context picture
-</div>
-</div>
 
 #### Networking
 
-{::options parse_block_html="true" /}
-<div class="row">
-<div class="col-md-8">
 The low level high speed network functions together are called
 [dataplane](https://en.wikipedia.org/wiki/Forwarding_plane). Coming from
 hardware circuits historically they feature some design rules that help
@@ -61,17 +45,9 @@ method to stateless dataplane modules. Such modules as a packet classifier, a
 checker or an Ethernet encapsulation. However, due to symbolic execution
 limitations it can not deal with a mutable state. And it is difficult to find a
 practical application that would not have it.
-</div>
-<div class="col-md-4">
-     networking picture
-</div>
-</div>
 
 #### Method
 
-{::options parse_block_html="true" /}
-<div class="row">
-<div class="col-md-12">
 To handle stateful network functions, we encapsulate the state into a set of
 commonly used data structures, such as a hash table, array or LRU allocator. We
 implement and certify them using theorem proving engine. To the data structures'
@@ -88,13 +64,7 @@ generalizing the approach starting from similar applications, such as
   learning
 * a firewall for a [DMZ][DMZ] setup
 
-</div>
-</div>
-<div class="row">
-<div class="col-md-12">
-<img src="images/vigor-method.svg"  style="width: 100%;"/>
-</div>
-</div>
+![Vigor Method](images/vigor-method.svg)
 
 [NAT]: https://en.wikipedia.org/wiki/Network_address_translation
 [mac-learning]: https://en.wikipedia.org/wiki/Forwarding_information_base
