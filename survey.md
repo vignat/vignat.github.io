@@ -21,23 +21,33 @@ The first section was about priorities; from five options, respondents had to as
   - Worst-case performance (instruction count being only a part of the picture)
   - Responsiveness to malicious use
 
+We then asked them which language they would be willing to use to write line-rate packet-processing software:
+- Pure C99: 11
+- C99 with some safety restrictions (e.g. no `void*` casts): 9
+- Pure C++: 2
+- C++ with some safety restrictions (e.g. no raw pointers, no implicit type conversion): 5
+- A type-safe memory-safe language (e.g. Go, Rust, D): 3
+- Managed code (e.g. Java, C#, Python): 6
+- Any of the above, but with programmer-provided annotations (e.g. loop invariants, no-null qualifiers): 3 (2 of which also checked "Managed code", 1 of which checked "Pure C99" and "Pure C++")
+
+
 ### Full data
 
-
-|  # | Crash-freedom | Liveness | Worst-case time | Worst-case energy | Correctness w.r.t. spec | Other | 
-|  1 | Low           | High     | High            | Low               | High                    | -     |
-|  2 | High          | High     | Medium          | Low               | High                    | -     |
-|  3 | High          | Medium   | Medium          | Low               | High                    | -     |
-|  4 | Medium        | Low      | Medium          | Low               | Low                     | High: Number of memory bus access, best case of CPU cycles, see MARS for CPU x86 modeling |
-|  5 | Low           | High     | High            | Medium            | Low                     | Medium: Conformance to a feature set (e.g. IEEE dot1.q 2011 protocols). This may be the same as your earlier question regarding your spec. It was unclear. |
-|  6 | High          | Medium   | Medium          | Medium            | High                    | -     |
-|  7 | High          | High     | Medium          | Low               | Low                     | Medium: Check for leaks of critical resources such as mbufs. |
-|  8 | High          | Low      | High            | Low               | High                    | Medium: It would be useful to prove that the code does what is supposed to do (performs the intended packet transformation), but I guess this falls in the "correctness wrt a spec" category. |
-|  9 | High          | High     | Medium          | Medium            | Medium                  | -     |
-| 10 | High          | High     | High            | Low               | Low                     | -     |
-| 11 | High          | Medium   | Medium          | Medium            | High                    | -     |
-| 12 | High          | Medium   | High            | Low               | Low                     | Medium: Not necessarily a new property, but I would like to have it extended to report on worst case performance, not necessarily as measured by the number of instructions. On a modern OOO core, the number of instructions is only a part of the picture considering stalls and other threads (hw or sw). |
-| 13 | Medium        | High     | Medium          | Medium            | Low                     | -     |
-| 14 | High          | Low      | Low             | Low               | High                    | -     |
-| 15 | High          | Medium   | High            | Low               | Medium                  | -     |
-| 16 | High          | Medium   | Low             | Medium            | High                    | High: Responsiveness to malicious use. |
+|  # | Crash-freedom | Liveness | Worst-case time | Worst-case energy | Correctness w.r.t. spec | Other | Pure C99 | Safe C99 | Pure C++ | Safe C++ | Type/Memory-safe lang | Managed lang | Any, with annotations | 
+|----|---------------|----------|-----------------|-------------------|-------------------------|-------|          |          |          |          |                       |              | x                     |
+|  1 | Low           | High     | High            | Low               | High                    | -     | x        |          |          |          | x                     | x            |                       |
+|  2 | High          | High     | Medium          | Low               | High                    | -     |          | x        |          | x        | x                     | x            |                       |
+|  3 | High          | Medium   | Medium          | Low               | High                    | -     | x        |          |          |          |                       |              |                       |
+|  4 | Medium        | Low      | Medium          | Low               | Low                     | High: Number of memory bus access, best case of CPU cycles, see MARS for CPU x86 modeling | x        |          |          |           |                       |              |                       |
+|  5 | Low           | High     | High            | Medium            | Low                     | Medium: Conformance to a feature set (e.g. IEEE dot1.q 2011 protocols). This may be the same as your earlier question regarding your spec. It was unclear. | x        |          | x        | x        |                       |              |                       |
+|  6 | High          | Medium   | Medium          | Medium            | High                    | -     | x        | x        |          |          |                       |              |                       |
+|  7 | High          | High     | Medium          | Low               | Low                     | Medium: Check for leaks of critical resources such as mbufs. | x        | x        |          |          |                       |              |                       |
+|  8 | High          | Low      | High            | Low               | High                    | Medium: It would be useful to prove that the code does what is supposed to do (performs the intended packet transformation), but I guess this falls in the "correctness wrt a spec" category. | x        | x        | x        | x        |                       |              |                       |
+|  9 | High          | High     | Medium          | Medium            | Medium                  | -     |          |          |          |          |                       | x            | x                     |
+| 10 | High          | High     | High            | Low               | Low                     | -     | x        | x        |          |          |                       |              |                       |
+| 11 | High          | Medium   | Medium          | Medium            | High                    | -     |          | x        |          |          | x                     |              |                       |
+| 12 | High          | Medium   | High            | Low               | Low                     | Medium: Not necessarily a new property, but I would like to have it extended to report on worst case performance, not necessarily as measured by the number of instructions. On a modern OOO core, the number of instructions is only a part of the picture considering stalls and other threads (hw or sw). | x         |          |          |          |                       | x            |                       |
+| 13 | Medium        | High     | Medium          | Medium            | Low                     | -     | x        | x        |          | x        |                       | x            |                       |
+| 14 | High          | Low      | Low             | Low               | High                    | -     | x        |          | x        |          |                       | x            |                       |
+| 15 | High          | Medium   | High            | Low               | Medium                  | -     |          | x        |          |          |                       |              |                       |
+| 16 | High          | Medium   | Low             | Medium            | High                    | High: Responsiveness to malicious use. | x        | x        |          | x        |                       |              |                       |
