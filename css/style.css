@@ -1,7 +1,17 @@
+body {
+  padding-top: 5rem;
+}
+
 .img-logo {
-  height: 50px;
+  height: 5rem;
+  vertical-align: bottom;
 }
 
 .text-logo {
   font-size: 2rem;
+  text-decoration: none;
+}
+
+.nav-item {
+  margin-left: 2rem;
 }
