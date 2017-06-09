@@ -1,10 +1,6 @@
 ---
-layout: default_dynamic
+layout: default
 title: "VigNAT: A Formally Verified Performant NAT"
-customcss:
- - css/style.css
-customjs:
- - js/widgets.js
 ---
 
 ## {{ page.title }}
