@@ -4,12 +4,16 @@ body {
 
 .img-logo {
   height: 5rem;
-  vertical-align: bottom;
+}
+
+.text-title {
+  font-size: 2.5rem;
+  margin-left: 1rem;
 }
 
 .text-logo {
   font-size: 2rem;
-  text-decoration: none;
+  text-decoration: none !important;
 }
 
 .nav-item {
