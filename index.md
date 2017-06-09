@@ -4,7 +4,6 @@ title: "VigNAT: A Formally Verified Performant NAT"
 customcss:
  - css/style.css
 customjs:
- - js/github.commits.widget.js
  - js/widgets.js
 ---
 
@@ -14,11 +13,9 @@ customjs:
 <div class="row">
 <div class="col-md-12">
 
-As a joint project of [NAL](https://nal.epfl.ch) and
-[DSLAB](https://dslab.epfl.ch), we strive towards enabling the development of
-trusted and practical software network functions. We use speculative symbolic
-execution backed up by theorem proving in semi-automatic formal verification of
-performant network functions.
+VigNAT is a first fully verified [NAT][NAT] that does not compromise performance. Subject to common asumptions, we guarantee that VigNAT will never crush irregardless of the network traffic, and will follow the corresponding RFC(3022).
+
+Our aim is to increase the reliability of network functions. We plan to do that with formal software verification. [NAT][NAT] is a classic NAT is a clasic example of stateful network function.
 
 </div>
 </div>

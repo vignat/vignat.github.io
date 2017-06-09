@@ -6,11 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" href="/favicon.ico">
 
-    <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
-
-    <!-- Optional theme -->
-    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css"
+          integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -18,9 +15,6 @@
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
       <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-
-    <!-- <link rel="stylesheet" type="text/css" href="/css/main.css" media="screen" />
-         <link rel="stylesheet" type="text/css" href="/css/pygment_trac.css" media="screen" /> -->
 
     {% for css in page.customcss %}
     <link rel="stylesheet" type="text/css" href="{{ css }}"/>
@@ -33,51 +27,83 @@
   <body>
     <div class="container">
       <header class="site-header">
-          <h1><a href="/"><img src="/images/vigor-logo.svg.png" alt="{{ site.name }}" style="height:50px; vertical-align: text-bottom;" /></a> {{ site.name }}
-              <div style="float: right">
-                  <a href="https://nal.epfl.ch" >NAL</a>
-                  <a href="https://dslab.epfl.ch" ><img src="/images/dslab-logo.png" alt="DSLab" style="height:50px; vertical-align: text-bottom;" /> </a> 
-                  <a href="https://epfl.ch"><img src="/images/epfl-logo.png"  alt="EPFL" style="height:50px; vertical-align: text-bottom;" /> </a> 
+          <div class="navbar navbar-light bg-faded">
+              <div class="navbar-header">
+                  <a class="navbar-brand" href="#">
+                      <img src="/images/vigor-logo.svg.png" alt="{{ site.name }}" style="height:50px;"/>
+                      Vigor
+                  </a >
               </div>
-          </h1>
-          <h1></h1>
-          <hr />
+              <div class="navbar-collapse collapse" id="collapsingNavbar">
+                  <ul class="navbar-nav ml-auto">
+                      <li class="nav-item">
+                          <div class="pull-right">
+                              <a href="http://nal.epfl.ch">
+                                  NAL
+                              </a>
+                          </div>
+                      </li>
+                      <li class="nav-item">
+                          <a href="http://dslab.epfl.ch">
+                              <img src="/images/dslab-logo.png" alt="DSLab" style="height:50px; vertical-align: text-bottom;" />
+                          </a>
+                      </li>
+                      <li class="nav-item">
+                          <a href="https://epfl.ch">
+                              <img src="/images/epfl-logo.png"  alt="EPFL" style="height:50px; vertical-align: text-bottom;" />
+                          </a>
+                      </li>
+                  </ul>
+              </div>
+          </div>
+
+          <!-- <div class="row" >
+               <h1 class="col-md-3">
+               <a href="/"><img  /></a>
+               {{ site.name }}
+               </h1>
+               <div class="col-md-9">
+               <div class="pull-right">
+               </div>
+               <div class="pull-right">
+               <a href="http://dslab.epfl.ch">
+               <div class="pull-right">
+               <div class="row" >
+               <img src="/images/dslab-logo.png" alt="DSLab" style="height:50px; vertical-align: text-bottom;" />
+               </div>
+               <div class="row" >
+               <p>
+               DSLAB
+               </p>
+               </div>
+               </div>
+               </a>
+               </div>
+               NAL
+               </p>
+               </a>
+               </div>
+               </div>
+               </div>
+               <hr /> -->
       </header>
 
       <div class="row">
         <article class="col-md-12 site-content">
           {{ content }}
         </article>
-
-        <!-- <div class="col-sm-3 col-md-2 site-sidebar" role="navigation">
-             <nav>
-             <ul class="list-unstyled site-nav">
-             {% for item_url in site.data.nav %}
-             {% assign item_url_index = item_url | append: 'index.html' %}
-             {% for p in site.pages %}
-             {% if (p.url == item_url) or (p.url == item_url_index) %}
-             <li
-             {% if item_url == '/' and page.url == '/index.html' %}
-             class="page-current"
-             {% elsif item_url != '/' and page.url contains item_url %}
-             class="page-current"
-             {% endif %}
-             ><a href="{{ p.url|remove:'index.html' }}">{{ p.title }}</a></li>
-             {% endif %}
-             {% endfor %}
-             {% endfor %}
-             </ul>
-
-             <a href="http://epfl.ch"><img src="/images/epfl-logo.png" style="width:120px;"/></a>
-             </nav>
-             </div> -->
       </div>
     </div>
 
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-    <!-- Latest compiled and minified JavaScript -->
-    <script src="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+
+    <!-- Bootstrap and JQurey scripts -->
+    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js"
+            integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"
+            integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"
+            integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+    <!-- page custom scripts -->
     {% for js in page.customjs %}
     <script async type="text/javascript" src="{{ js }}"></script>
     {% endfor %}
