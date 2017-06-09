@@ -12,10 +12,10 @@
   </head>
 
   <body>
-    <nav class="navbar navbar-toggleable-md fixed-top">
+    <nav class="navbar navbar-toggleable-md navbar-inverse bg-inverse fixed-top">
       <a class="navbar-brand" href="/">
         <img class="img-logo" src="/images/vigor-logo.png">
-        {{ site.name }}
+        <span class="text-logo">{{ site.name }}</span>
       </a>
 
       <div class="navbar-collapse justify-content-end">
@@ -28,7 +28,7 @@
           </li>
           <li class="nav-item">
             <a href="http://nal.epfl.ch">
-              <abbr title="Network Architecture Laboratory (NAL)">NAL</abbr>
+              <abbr class="text-logo" title="Network Architecture Laboratory (NAL)">NAL</abbr>
             </a>
           </li>
           <li class="nav-item">
@@ -42,7 +42,9 @@
     </nav>
 
     <div class="container">
-      {{ content }}
+      <div class="jumbotron">
+        {{ content }}
+      </div>
     </div>
 
     <script>
