@@ -3,7 +3,7 @@ layout: default
 title: "VigNAT Survey Results"
 ---
 
-## {{ page.title }}
+# {{ page.title }}
 
 ### Summary
 

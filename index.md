@@ -3,7 +3,7 @@ layout: default
 title: "VigNAT: A Formally Verified Performant NAT"
 ---
 
-## {{ page.title }}
+# {{ page.title }}
 
 VigNAT is a first fully verified [NAT][NAT] that does not compromise performance. Subject to common asumptions, we guarantee that VigNAT will never crush irregardless of the network traffic, and will follow the corresponding RFC(3022).
 
