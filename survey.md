@@ -7,7 +7,8 @@ title: "VigNAT Survey Results"
 
 ### Summary
 
-We asked 16 members of the networking community (e.g. researchers, DPDK developers) a short series of questions.
+In June of the year 2016, we asked multiple members of the networking community by the means of several mailing lists and personal correspondence.
+We got 16 responses to a short series of questions.
 
 The first section was about priorities; from five options, respondents had to assign high/medium/low priority, while keeping at least one option on low priority. They also had the option to ask for one feature as free-form text. 
 - **Crash freedom** (the software cannot ever crash): 12, 2 and 2 high, medium and low priority respectively.
