@@ -1,2 +1,4 @@
 name: Vigor
 theme: jekyll-theme-tactile
+gems:
+  - jekyll-octicons

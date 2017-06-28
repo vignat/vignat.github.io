@@ -18,18 +18,33 @@
         <span class="text-title">{{ site.name }}</span>
       </a>
 
+      <div class="navbar-collapse justify-content-center">
+          <ul class="navbar-nav nav-pills">
+              <li class="nav-item">
+                  <a href="https://github.com/vignat/vignat">
+                      {% octicon file-code height:32 class:"right left" aria-label:hi %}
+                      code
+                  </a>
+              </li>
+              <li class="nav-item">
+                  <a href="https://vignat.github.io/survey">
+                      {% octicon clippy height:32 class:"right left" aria-label:hi %}
+                      survey
+                  </a>
+              </li>
+              <li class="nav-item">
+                  <a href="https://vignat.github.io/vignat-paper.pdf">
+                      {% octicon file-text height:32 class:"right left" aria-label:hi %}
+                      <span class="glyphicon glyphicon-asterisk" aria-hidden="true"></span>
+                      paper
+                  </a>
+              </li>
+          </ul>
+      </div>
+
       <div class="navbar-collapse justify-content-end">
         <ul class="navbar-nav">
-          <li class="nav-item">
-            <a href="https://github.com/vignat/vignat">
-              <abbr class="text-logo" title="Source code repository">code</abbr>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a href="https://vignat.github.io/survey">
-              <abbr class="text-logo" title="Networking community survey">survey</abbr>
-            </a>
-          </li>
+          <li class="nav-divider"></li>
           <li class="nav-item">
             <a href="http://dslab.epfl.ch">
               <img class="img-logo" src="/images/dslab-logo.png">
