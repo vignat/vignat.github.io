@@ -107,12 +107,39 @@ The _Linux NAT_ achieves significantly lower throughput (0.6 Mpps).
 </div>
 
 ### Contact
+{::options parse_block_html="true" /}
 
-[Arseniy Zaostrovnykh](mailto:arseniy.zaostrovnykh@epfl.ch),
-[Luis Pedrosa](mailto:luis.pedrosa@epfl.ch),
-[Solal Pirelli](mailto:solal.pirelli@epfl.ch),
-[Katerina Argyraki](mailto:katerina.argyraki@epfl.ch),
-[George Candea](mailto:george.candea@epfl.ch).
+<div class="row">
+<div class="col-md-3 text-center">
+<img class="bumshot" src="images/arseniy_small.jpg" alt="Arseniy Zaostrovnykh"/>
+<h5 class="card-title">Arseniy Zaostrovnykh</h5>
+<p><a href="mailto:arseniy.zaostrovnykh@epfl.ch">arseniy.zaostrovnykh@epfl.ch</a></p>
+</div>
+
+<div class="col-md-2 text-center">
+<img class="card-img-top bumshot" src="images/solal_small.png" alt="Solal Pirelli"/>
+<h5 class="card-title">Solal Pirelli</h5>
+<p> <a href="mailto:solal.pirelli@epfl.ch">solal.pirelli@epfl.ch</a> </p>
+</div>
+
+<div class="col-md-2 text-center">
+<img class="card-img-top bumshot" src="images/luis_small.jpg" alt="Luis Pedrosa"/>
+<h5 class="card-title">Luis Pedrosa</h5>
+<p> <a href="mailto:luis.pedrosa@epfl.ch">luis.pedrosa@epfl.ch</a> </p>
+</div>
+
+<div class="col-md-3 text-center">
+<img class="card-img-top bumshot" src="images/katerina_small.jpg" alt="Katerina Argyraki"/>
+<h5 class="card-title">Katerina Argyraki</h5>
+<p> <a href="mailto:katerina.argyraki@epfl.ch">katerina.argyraki@epfl.ch</a> </p>
+</div>
+
+<div class="col-md-2 text-center">
+<img class="card-img-top bumshot" src="images/george_small.png" alt="George Candea"/>
+<h5 class="card-title">George Candea</h5>
+<p> <a href="mailto:george.candea@epfl.ch">george.candea@epfl.ch</a> </p>
+</div>
+</div>
 
 ### References
 
