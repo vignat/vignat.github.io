@@ -16,22 +16,13 @@ We managed to formally mechanically verify it.
 
 ### Overview
 
-We present a Network Address Translator (NAT) written in C and proven to be
-semantically correct according to RFC 3022, as well as crash-free and
-memory-safe. There exists a lot of recent work on network verification, but it
-mostly assumes models of network functions and proves properties specific to
-network configuration, such as reachability and absence of loops.  Our proof
-applies directly to the C code of a network function, and it demonstrates the
-absence of implementation bugs. Prior work argued that this is not feasible
-(i.e., that verifying a real, stateful network function written in C does not
-scale) but we demonstrate otherwise: NAT is one of the most popular network
-functions and maintains per-flow state that needs to be properly updated and expired, 
-which is a typical source of verification challenges.
-We tackle the
-scalability challenge with a new combination of symbolic execution and proof
-checking using separation logic; this combination matches well the typical
-structure of a network function.  We then demonstrate that formally proven
-correctness in this case does not come at the cost of performance.
+We present a <abbr title="Network Address Translator">NAT</abbr> written in C and proven to be semantically correct according to RFC 3022, as well as crash-free and memory-safe.
+There exists a lot of recent work on network verification, but it mostly assumes models of network functions and proves properties specific to network configuration, such as reachability and absence of loops.
+Our proof applies directly to the C code of a network function, and it demonstrates the absence of implementation bugs.
+
+We tackle the scalability challenge with a new combination of symbolic execution and proof checking using separation logic;
+this combination matches well the typical structure of a network function.
+We then demonstrate that formally proven correctness in this case does not come at the cost of performance.
 
 #### Software Network Functions
 {::options parse_block_html="true" /}
@@ -42,8 +33,8 @@ Moreover, we are witnessing a push for virtual network functions that can be dep
 
 #### Reliability Perspective
 
-However, the software development methods do not keep up with the raising responsibility.
-It is traditionally difficult to develop a reliable software implementation of an originally hardware component.
+Such popular NF as NAT however has proven hard to get right over time: the NAT on various Cisco devices can be [crashed](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2015-6271) or [hung](http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2013-1138) using carefully crafted inputs;
+similar problems exist in [Juniper’s NAT](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2014-3817), the NAT in [Windows Server](https://technet.microsoft.com/en-us/library/security/ms13-064.aspx), and NATs based on [NetFilter](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2014-9715).
 
 On the other side, formal verification techniques have grown strong enough to certify complete and practical systems.
 Such systems as a [compiler](http://compcert.inria.fr/), an operating
@@ -76,6 +67,10 @@ This is much easier.
 [DMZ]: https://en.wikipedia.org/wiki/DMZ_(computing)
 
 ### Results
+
+![Latency Plot](images/latency-new-flows.png)
+![Latency CDF Plot](images/new-flows-late-cdf.png)
+![Throughput Plot](images/thru.png)
 
 ### Contact
 
