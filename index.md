@@ -54,11 +54,14 @@ system [kernel](https://sel4.systems/), a distributed key value
 #### Method
 
 The rationale behind our approach is that different verification techniques are best suited for different types of code.
-The beauty of symbolic execution [9] lies in its ease of use: it enables automatic code analysis, hence can be used by developers without verification expertise.
-The challenge with symbolic execution is its notorious lack of scalability: applying it to real C code typically leads to path explosion [19, 54].
+The beauty of [symbolic execution](https://klee.github.io/) lies in its ease of use: it enables automatic code analysis, hence can be used by developers without verification expertise.
+The challenge with symbolic execution is its notorious lack of scalability: applying it to real C code typically leads to path explosion [1,2].
 The part of real NF code that typically leads to unmanageable path explosion is the one that manipulates state.
-Hence, we split NF code into two parts: (1) A library of data structures that keep all the “difficult” state, which we then formally prove to be correct—this takes time and formal methods expertise, but can be amortized if the library is re-used across multiple NFs;
-and (2) stateless code that uses the library, which we automatically and quickly verify using symbolic execution.
+Hence, we split NF code into two parts:
+
+* A library of data structures that keep all the “difficult” state, which we then formally prove to be correct—this takes time and formal methods expertise, but can be amortized if the library is re-used across multiple NFs.
+* Stateless code that uses the library, which we automatically and quickly verify using symbolic execution.
+
 The challenge lies in combining the results of these two verification techniques, and for that we developed a technique we call “lazy proofs”.
 A lazy proof consists of sub-proofs structured in a way that top-level proofs proceed assuming lower level properties, and the latter are proven lazily a posteriori.
 For example, symbolic execution requires the use of models that must be correct; we first do the symbolic execution and only afterward validate automatically the correctness of the models.
@@ -85,4 +88,5 @@ This is much easier.
 ### References
 
 **\[1\]** Dobrescu, Mihai, and Katerina Argyraki. "Software dataplane verification." Proceedings of the 11th Symposium on Networked Systems Design and Implementation (NSDI), Seattle, WA. 2014.
+**\[2\]** Stoenescu, R., Popovici, M., Negreanu, L., and Raiciu, C. "SymNet: scalable symbolic execution for modern networks." In ACM SIGCOMM Conf. 2016.
 
