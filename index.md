@@ -5,68 +5,70 @@ title: "VigNAT: A Formally Verified Performant NAT"
 
 # {{ page.title }}
 
-VigNAT is a first fully verified [NAT][NAT] that does not compromise performance. Subject to common asumptions, we guarantee that VigNAT will never crush irregardless of the network traffic, and will follow the corresponding RFC(3022).
+VigNAT is a first fully verified [NAT][NAT] that does not compromise performance.
+Subject to common asumptions, we guarantee that VigNAT will never crush irregardless of the network traffic, and will follow the corresponding RFC(3022).
 
-Our aim is to increase the reliability of network functions. We plan to do that with formal software verification. [NAT][NAT] is a classic NAT is a clasic example of stateful network function.
-
+Our aim is to increase the reliability of network functions.
+We plan to do that with formal software verification.
+[NAT][NAT] is a canonical stateful network function.
+We managed to formally mechanically verify it.
 
 
 ### Overview
 
-#### Context
+We present a Network Address Translator (NAT) written in C and proven to be
+semantically correct according to RFC 3022, as well as crash-free and
+memory-safe. There exists a lot of recent work on network verification, but it
+mostly assumes models of network functions and proves properties specific to
+network configuration, such as reachability and absence of loops.  Our proof
+applies directly to the C code of a network function, and it demonstrates the
+absence of implementation bugs. Prior work argued that this is not feasible
+(i.e., that verifying a real, stateful network function written in C does not
+scale) but we demonstrate otherwise: NAT is one of the most popular network
+functions and maintains per-flow state that needs to be properly updated and expired, 
+which is a typical source of verification challenges.
+We tackle the
+scalability challenge with a new combination of symbolic execution and proof
+checking using separation logic; this combination matches well the typical
+structure of a network function.  We then demonstrate that formally proven
+correctness in this case does not come at the cost of performance.
 
-Last decade is marked by a second coming of virtualization. The birth of cloud
-put a great demand on systems to be portable and replaceable. Now entire
-networks follow computing nodes and become virtualizable. That is how the SDN
-was born. As it advances more and more originally hardware functions move to the
-portable and flexible software domain.
+#### Software Network Functions
+{::options parse_block_html="true" /}
 
-However, the software development methods do not keep up with the raising
-responsibility. It is traditionally difficult to develop a reliable software
-implementation of an originally hardware component.
+Software <abbr title="Network Function">NF</abbr>s have always been popular in low-rate environments, such as home gateways or wireless access points.
+More recently, they have also appeared in experimental [IP routers](http://routebricks.org/) and [industrial middleboxes][brocade] that support multi-Gbps line rates.
+Moreover, we are witnessing a push for virtual network functions that can be deployed on general-purpose platforms on demand, much like virtual machines are being deployed in clouds.
 
-On the other side, formal verification techniques have grown strong enough to
-certify complete and practical systems. Such systems as a [compiler](http://compcert.inria.fr/), an operating
+#### Reliability Perspective
+
+However, the software development methods do not keep up with the raising responsibility.
+It is traditionally difficult to develop a reliable software implementation of an originally hardware component.
+
+On the other side, formal verification techniques have grown strong enough to certify complete and practical systems.
+Such systems as a [compiler](http://compcert.inria.fr/), an operating
 system [kernel](https://sel4.systems/), a distributed key value
 [store](https://github.com/Microsoft/Ironclad/tree/master/ironfleet) or a file
 [system](http://adam.chlipala.net/papers/FscqSOSP15/).
 
-#### Networking
-
-The low level high speed network functions together are called
-[dataplane](https://en.wikipedia.org/wiki/Forwarding_plane). Coming from
-hardware circuits historically they feature some design rules that help
-verification. The code is usually small and execution path length is limited. It
-is modular with a well defined interface - a frame (or a packet).
-
-We follow the previous work\[1\] that succeeded in applying
-[symbolic execution](https://en.wikipedia.org/wiki/Symbolic_execution)
-method to stateless dataplane modules. Such modules as a packet classifier, a
-checker or an Ethernet encapsulation. However, due to symbolic execution
-limitations it can not deal with a mutable state. And it is difficult to find a
-practical application that would not have it.
-
 #### Method
 
-To handle stateful network functions, we encapsulate the state into a set of
-commonly used data structures, such as a hash table, array or LRU allocator. We
-implement and certify them using theorem proving engine. To the data structures'
-API borderline, we replace them with symbolic-friendly but incomplete models
-that make exhaustive symbolic execution of the application possible. Our
-customized symbolic execution engine then verifies the application and generates
-a corpus of assumptions regarding the data structure contracts admitted in the
-process. We use our custom tool to prove the assumptions based on the formal API
-contracts.
-
-We developed a dynamic [NAT][NAT] box as a simple stateful application. We are
-generalizing the approach starting from similar applications, such as
-* an L2 bridge with [dynamic forwarding table][mac-learning] updated by mac
-  learning
-* a firewall for a [DMZ][DMZ] setup
+The rationale behind our approach is that different verification techniques are best suited for different types of code.
+The beauty of symbolic execution [9] lies in its ease of use: it enables automatic code analysis, hence can be used by developers without verification expertise.
+The challenge with symbolic execution is its notorious lack of scalability: applying it to real C code typically leads to path explosion [19, 54].
+The part of real NF code that typically leads to unmanageable path explosion is the one that manipulates state.
+Hence, we split NF code into two parts: (1) A library of data structures that keep all the “difficult” state, which we then formally prove to be correct—this takes time and formal methods expertise, but can be amortized if the library is re-used across multiple NFs;
+and (2) stateless code that uses the library, which we automatically and quickly verify using symbolic execution.
+The challenge lies in combining the results of these two verification techniques, and for that we developed a technique we call “lazy proofs”.
+A lazy proof consists of sub-proofs structured in a way that top-level proofs proceed assuming lower level properties, and the latter are proven lazily a posteriori.
+For example, symbolic execution requires the use of models that must be correct; we first do the symbolic execution and only afterward validate automatically the correctness of the models.
+This approach enables us to avoid having to prove that our models are universally valid—which is hard—but instead only prove that they are valid for the specific NF and the specific properties we verified earlier with symbolic execution.
+This is much easier.
 
 ![Vigor Method](images/vigor-method.svg)
 
 [NAT]: https://en.wikipedia.org/wiki/Network_address_translation
+[brocade]: http://www.brocade.com/en/products-services/software-networking/network-functions-virtualization/vyatta-network-os.html
 [mac-learning]: https://en.wikipedia.org/wiki/Forwarding_information_base
 [DMZ]: https://en.wikipedia.org/wiki/DMZ_(computing)
 
