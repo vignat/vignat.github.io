@@ -68,9 +68,9 @@ This is much easier.
 
 ### Results
 
-![Latency Plot](images/latency-new-flows.png)
-![Latency CDF Plot](images/new-flows-late-cdf.png)
-![Throughput Plot](images/thru.png)
+![Latency Plot](images/latency-new-flows.png){: width="100%"}
+![Latency CDF Plot](images/new-flows-lat-cdf.png){: width="100%"}
+![Throughput Plot](images/thru.png){: width="100%"}
 
 ### Contact
 
