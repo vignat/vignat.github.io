@@ -7,6 +7,7 @@
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css">
     <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/octicons/3.5.0/octicons.min.css">
 
     <title>{{ site.name }}</title>
   </head>
@@ -22,20 +23,23 @@
           <ul class="navbar-nav nav-pills">
               <li class="nav-item">
                   <a href="https://github.com/vignat/vignat">
-                      {% octicon file-code height:32 class:"right left" aria-label:hi %}
+                      <span class="octicon octicon-file-code"
+                            style="font-size:40px;">
+                          </span>
                       code
                   </a>
               </li>
               <li class="nav-item">
                   <a href="https://vignat.github.io/survey">
-                      {% octicon clippy height:32 class:"right left" aria-label:hi %}
+                      <span class="octicon octicon-clippy"
+                            style="font-size:40px;"></span>
                       survey
                   </a>
               </li>
               <li class="nav-item">
                   <a href="https://vignat.github.io/vignat-paper.pdf">
-                      {% octicon file-text height:32 class:"right left" aria-label:hi %}
-                      <span class="glyphicon glyphicon-asterisk" aria-hidden="true"></span>
+                      <span class="octicon octicon-file-text"
+                            style="font-size:40px;"></span>
                       paper
                   </a>
               </li>
