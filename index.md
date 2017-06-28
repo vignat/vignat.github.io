@@ -81,24 +81,24 @@ We expect it to be significantly slower than the other two, because it does not 
 
 #### Latency
 <div class="row">
-<div class="col-md-4">
+<div class="col-md-6">
 The _Verified NAT_ (5.13μsec) has 2% higher latency than the _Unverified NAT_ (5.03μsec), and 8% higher than _No-op_ forwarding (4.75μsec).
 So, on top of the latency due to packet reception and transmission, the Unverified and Verified NAT add, respectively, 0.28μsec and 0.38μsec of NAT-specific packet processing.
 For all three NFs, latency remains stable as flow-table occupancy grows, which shows that the two NATs use good hash functions to spread the load uniformly across their tables.
 The only case where latency increases (to 5.3μsec) is for the Verified NAT, when the flow table becomes almost completely full (the green line curves upward at the last data point).
 The _Linux NAT_ has significantly higher latency (20μsec).
 </div>
-<div class="col-md-8">
+<div class="col-md-6">
 ![Latency Plot](images/latency-new-flows.png){: width="100%"}
 </div>
 </div>
 
 #### Throughput
 <div class="row">
-<div class="col-md-8">
+<div class="col-md-6">
 ![Throughput Plot](images/thru.png){: width="100%"}
 </div>
-<div class="col-md-4">
+<div class="col-md-6">
 This plot shows the maximum throughput achieved by each NF with less than 0.1% packet loss, as a function of the number of generated flows.
 The _Verified NAT_ (1.8 Mpps) has 10% lower throughput than the _Unverified NAT_ (2 Mpps).
 This difference in throughput comes from the difference in NAT-specific processing latency (0.38μsec vs. 0.28μsec) imposed by the two NATs: in our experimental setup, this latency difference cannot be masked, as each NF runs on a single core and processes one packet at a time.
