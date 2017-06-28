@@ -79,14 +79,14 @@ We compared key perofrmance characteristics of four NFs (see our [paper](vignat-
 *  Linux NAT is [NetFilter](http://www.netfilter.org/), set up with straightforward masquerade rules and tuned for performance.
 We expect it to be significantly slower than the other two, because it does not benefit from DPDK’s optimized packet reception and transmission.
 
-### Latency
+#### Latency
 <div class="row">
 <div class="col-md-4">
-The *Verified NAT* (5.13μsec) has 2% higher latency than the *Unverified NAT* (5.03μsec), and 8% higher than *No-op* forwarding (4.75μsec).
+The _Verified NAT_ (5.13μsec) has 2% higher latency than the _Unverified NAT_ (5.03μsec), and 8% higher than _No-op_ forwarding (4.75μsec).
 So, on top of the latency due to packet reception and transmission, the Unverified and Verified NAT add, respectively, 0.28μsec and 0.38μsec of NAT-specific packet processing.
 For all three NFs, latency remains stable as flow-table occupancy grows, which shows that the two NATs use good hash functions to spread the load uniformly across their tables.
 The only case where latency increases (to 5.3μsec) is for the Verified NAT, when the flow table becomes almost completely full (the green line curves upward at the last data point).
-The *Linux NAT* has significantly higher latency (20μsec).
+The _Linux NAT_ has significantly higher latency (20μsec).
 </div>
 <div class="col-md-8">
 ![Latency Plot](images/latency-new-flows.png){: width="100%"}
@@ -100,9 +100,9 @@ The *Linux NAT* has significantly higher latency (20μsec).
 </div>
 <div class="col-md-4">
 This plot shows the maximum throughput achieved by each NF with less than 0.1% packet loss, as a function of the number of generated flows.
-The *Verified NAT* (1.8 Mpps) has 10% lower throughput than the *Unverified NAT* (2 Mpps).
+The _Verified NAT_ (1.8 Mpps) has 10% lower throughput than the _Unverified NAT_ (2 Mpps).
 This difference in throughput comes from the difference in NAT-specific processing latency (0.38μsec vs. 0.28μsec) imposed by the two NATs: in our experimental setup, this latency difference cannot be masked, as each NF runs on a single core and processes one packet at a time.
-The *Linux NAT* achieves significantly lower throughput (0.6 Mpps).
+The _Linux NAT_ achieves significantly lower throughput (0.6 Mpps).
 </div>
 </div>
 
@@ -116,6 +116,6 @@ The *Linux NAT* achieves significantly lower throughput (0.6 Mpps).
 
 ### References
 
-**\[1\]** Dobrescu, Mihai, and Katerina Argyraki. "Software dataplane verification." Proceedings of the 11th Symposium on Networked Systems Design and Implementation (NSDI), Seattle, WA. 2014.
-**\[2\]** Stoenescu, R., Popovici, M., Negreanu, L., and Raiciu, C. "SymNet: scalable symbolic execution for modern networks." In ACM SIGCOMM Conf. 2016.
+- **\[1\]** Dobrescu, Mihai, and Katerina Argyraki. "Software dataplane verification." Proceedings of the 11th Symposium on Networked Systems Design and Implementation (NSDI), Seattle, WA. 2014.
+- **\[2\]** Stoenescu, R., Popovici, M., Negreanu, L., and Raiciu, C. "SymNet: scalable symbolic execution for modern networks." In ACM SIGCOMM Conf. 2016.
 
