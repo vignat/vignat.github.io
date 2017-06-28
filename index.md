@@ -67,10 +67,44 @@ This is much easier.
 [DMZ]: https://en.wikipedia.org/wiki/DMZ_(computing)
 
 ### Results
+{::options parse_block_html="true" /}
 
+We compared key perofrmance characteristics of four NFs (see our [paper](vignat-paper.pdf) for details):
+*  Verified NAT - our verified VigNAT
+*  No-op forwarding is implemented on top of DPDK;
+   it receives traffic on one port and forwards it out another port without any other processing.
+   It serves as a baseline that shows the best throughput and latency that a DPDK NF can achieve in our experimental environment.
+*  Unverified NAT is also implemented on top of DPDK;
+   it implements the same RFC as VigNAT and supports the same number of flows (65,535), but uses the hash table that comes with the DPDK distribution.
+*  Linux NAT is [NetFilter](http://www.netfilter.org/), set up with straightforward masquerade rules and tuned for performance.
+We expect it to be significantly slower than the other two, because it does not benefit from DPDK’s optimized packet reception and transmission.
+
+### Latency
+<div class="row">
+<div class="col-md-4">
+The *Verified NAT* (5.13μsec) has 2% higher latency than the *Unverified NAT* (5.03μsec), and 8% higher than *No-op* forwarding (4.75μsec).
+So, on top of the latency due to packet reception and transmission, the Unverified and Verified NAT add, respectively, 0.28μsec and 0.38μsec of NAT-specific packet processing.
+For all three NFs, latency remains stable as flow-table occupancy grows, which shows that the two NATs use good hash functions to spread the load uniformly across their tables.
+The only case where latency increases (to 5.3μsec) is for the Verified NAT, when the flow table becomes almost completely full (the green line curves upward at the last data point).
+The *Linux NAT* has significantly higher latency (20μsec).
+</div>
+<div class="col-md-8">
 ![Latency Plot](images/latency-new-flows.png){: width="100%"}
-![Latency CDF Plot](images/new-flows-lat-cdf.png){: width="100%"}
+</div>
+</div>
+
+#### Throughput
+<div class="row">
+<div class="col-md-8">
 ![Throughput Plot](images/thru.png){: width="100%"}
+</div>
+<div class="col-md-4">
+This plot shows the maximum throughput achieved by each NF with less than 0.1% packet loss, as a function of the number of generated flows.
+The *Verified NAT* (1.8 Mpps) has 10% lower throughput than the *Unverified NAT* (2 Mpps).
+This difference in throughput comes from the difference in NAT-specific processing latency (0.38μsec vs. 0.28μsec) imposed by the two NATs: in our experimental setup, this latency difference cannot be masked, as each NF runs on a single core and processes one packet at a time.
+The *Linux NAT* achieves significantly lower throughput (0.6 Mpps).
+</div>
+</div>
 
 ### Contact
 
