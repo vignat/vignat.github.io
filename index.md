@@ -5,22 +5,13 @@ title: "VigNAT: A Formally Verified Performant NAT"
 
 # {{ page.title }}
 
-VigNAT is a first fully verified [NAT][NAT] that does not compromise performance.
-Subject to common asumptions, we guarantee that VigNAT will never crush irregardless of the network traffic, and will follow the corresponding RFC(3022).
-
-Our aim is to increase the reliability of network functions.
-We plan to do that with formal software verification.
-[NAT][NAT] is a canonical stateful network function.
-We managed to formally mechanically verify it.
-
-
 ### Overview
 
-We present a <abbr title="Network Address Translator">NAT</abbr> written in C and proven to be semantically correct according to RFC 3022, as well as crash-free and memory-safe.
+We present a <abbr title="Network Address Translator">[NAT][NAT]</abbr> written in C and proven to be semantically correct according to RFC 3022, as well as crash-free and memory-safe.
 There exists a lot of recent work on network verification, but it mostly assumes models of network functions and proves properties specific to network configuration, such as reachability and absence of loops.
 Our proof applies directly to the C code of a network function, and it demonstrates the absence of implementation bugs.
 
-We tackle the scalability challenge with a new combination of symbolic execution and proof checking using separation logic;
+We tackle the scalability challenge with a new combination of [symbolic execution](https://en.wikipedia.org/wiki/Symbolic_execution) and [proof checking](https://en.wikipedia.org/wiki/Automated_proof_checking) using [separation logic](https://en.wikipedia.org/wiki/Automated_proof_checking);
 this combination matches well the typical structure of a network function.
 We then demonstrate that formally proven correctness in this case does not come at the cost of performance.
 
