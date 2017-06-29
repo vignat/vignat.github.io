@@ -111,31 +111,31 @@ The _Linux NAT_ achieves significantly lower throughput (0.6 Mpps).
 
 <div class="row">
 <div class="col-md-3 text-center">
-<img class="bumshot" src="images/bumshots/arseniy_small.jpg" alt="Arseniy Zaostrovnykh"/>
+<img class="bumshot" src="images/headshots/arseniy_small.jpg" alt="Arseniy Zaostrovnykh"/>
 <h5 class="card-title">Arseniy Zaostrovnykh</h5>
 <p><a href="mailto:arseniy.zaostrovnykh@epfl.ch">arseniy.zaostrovnykh@epfl.ch</a></p>
 </div>
 
 <div class="col-md-2 text-center">
-<img class="card-img-top bumshot" src="images/bumshots/solal_small.png" alt="Solal Pirelli"/>
+<img class="card-img-top bumshot" src="images/headshots/solal_small.png" alt="Solal Pirelli"/>
 <h5 class="card-title">Solal Pirelli</h5>
 <p> <a href="mailto:solal.pirelli@epfl.ch">solal.pirelli@epfl.ch</a> </p>
 </div>
 
 <div class="col-md-2 text-center">
-<img class="card-img-top bumshot" src="images/bumshots/luis_small.jpg" alt="Luis Pedrosa"/>
+<img class="card-img-top bumshot" src="images/headshots/luis_small.jpg" alt="Luis Pedrosa"/>
 <h5 class="card-title">Luis Pedrosa</h5>
 <p> <a href="mailto:luis.pedrosa@epfl.ch">luis.pedrosa@epfl.ch</a> </p>
 </div>
 
 <div class="col-md-3 text-center">
-<img class="card-img-top bumshot" src="images/bumshots/katerina_small.jpg" alt="Katerina Argyraki"/>
+<img class="card-img-top bumshot" src="images/headshots/katerina_small.jpg" alt="Katerina Argyraki"/>
 <h5 class="card-title">Katerina Argyraki</h5>
 <p> <a href="mailto:katerina.argyraki@epfl.ch">katerina.argyraki@epfl.ch</a> </p>
 </div>
 
 <div class="col-md-2 text-center">
-<img class="card-img-top bumshot" src="images/bumshots/george_small.png" alt="George Candea"/>
+<img class="card-img-top bumshot" src="images/headshots/george_small.png" alt="George Candea"/>
 <h5 class="card-title">George Candea</h5>
 <p> <a href="mailto:george.candea@epfl.ch">george.candea@epfl.ch</a> </p>
 </div>
