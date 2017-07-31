@@ -6,12 +6,13 @@ title: "VigNAT: A Formally Verified Performant NAT"
 # {{ page.title }}
 
 ### Overview
+{::options parse_block_html="true" /}
 
-We present a <abbr title="Network Address Translator">[NAT][NAT]</abbr> written in C and proven to be semantically correct according to RFC 3022, as well as crash-free and memory-safe.
+We present a <abbr title="Network Address Translator">[NAT][NAT]</abbr> written in C and proven to be semantically correct according to [<abbr title="Request For Comments">RFC</abbr> 3022][RFC3022], as well as crash-free and memory-safe.
 There exists a lot of recent work on network verification, but it mostly assumes models of network functions and proves properties specific to network configuration, such as reachability and absence of loops.
 Our proof applies directly to the C code of a network function, and it demonstrates the absence of implementation bugs.
 
-We tackle the scalability challenge with a new combination of [symbolic execution](https://en.wikipedia.org/wiki/Symbolic_execution) and [proof checking](https://en.wikipedia.org/wiki/Automated_proof_checking) using [separation logic](https://en.wikipedia.org/wiki/Automated_proof_checking);
+We tackle the scalability challenge with a new combination of [symbolic execution](https://en.wikipedia.org/wiki/Symbolic_execution) and [theorem proving](https://en.wikipedia.org/wiki/Automated_proof_checking) using [separation logic](https://en.wikipedia.org/wiki/Separation_logic);
 this combination matches well the typical structure of a network function.
 We then demonstrate that formally proven correctness in this case does not come at the cost of performance.
 
@@ -53,6 +54,7 @@ This is much easier.
 ![Vigor Method](images/vigor-method.svg)
 
 [NAT]: https://en.wikipedia.org/wiki/Network_address_translation
+[RFC3022]: https://tools.ietf.org/html/rfc3022
 [brocade]: http://www.brocade.com/en/products-services/software-networking/network-functions-virtualization/vyatta-network-os.html
 [mac-learning]: https://en.wikipedia.org/wiki/Forwarding_information_base
 [DMZ]: https://en.wikipedia.org/wiki/DMZ_(computing)
