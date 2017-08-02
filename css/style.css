@@ -53,3 +53,7 @@ table tr th :last-child, table tr td :last-child {
 .bumshot {
     border-radius: 50%;
 }
+
+.card-email {
+    font-size: smaller;
+}
