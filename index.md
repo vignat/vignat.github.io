@@ -22,7 +22,48 @@ We then demonstrate that formally proven correctness in this case does not come 
 Software <abbr title="Network Function">NF</abbr>s have always been popular in low-rate environments, such as home gateways or wireless access points.
 More recently, they have also appeared in experimental [IP routers](http://routebricks.org/) and [industrial middleboxes][brocade] that support multi-Gbps line rates.
 Moreover, we are witnessing a push for virtual network functions that can be deployed on general-purpose platforms on demand, much like virtual machines are being deployed in clouds.
+<p>
+<button class="btn btn-primary btn-lg btn-block" type="button" data-toggle="collapse" data-target="#snfvshnf" aria-expanded="false" aria-contraols="snfvshnf">
+Hardware NFs vs. software NFs
+</button>
+</p>
+<div class="collapse" id="snfvshnf">
+<div class="row">
+<div class="col-md-6">
+<div dir="rtl"> <h2> Hardware NF </h2> </div>
+</div>
+<div class="col-md-6">
+<h2> Software NF </h2>
+</div>
+</div>
+<div class="row">
+<div class="col-md-4">
+<div dir="rtl">
 
+
+* Higher unit cost
+* Bulky
+* Needs care
+
+</div>
+</div>
+<div class="col-md-2">
+<img class="glass" src="images/steel-cup.png" alt="Steel Cup"/>
+</div>
+<div class="col-md-2">
+<img class="glass" src="images/paper-cup.png" alt="Paper Cup"/>
+</div>
+<div class="col-md-4">
+
+
+* Low unit cost
+* Compact
+* Recyclable
+* Needs no care
+ 
+</div>
+</div>
+</div>
 #### Reliability Perspective
 
 Such popular NF as NAT however has proven hard to get right over time: the NAT on various Cisco devices can be [crashed](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2015-6271) or [hung](http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2013-1138) using carefully crafted inputs;
