@@ -29,7 +29,7 @@ Such popular NF as NAT however has proven hard to get right over time: the NAT o
 similar problems exist in [Juniper’s NAT](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2014-3817), the NAT in [Windows Server](https://technet.microsoft.com/en-us/library/security/ms13-064.aspx), and NATs based on [NetFilter](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2014-9715).
 
 The bugs periodically reach consumers affecting hunderds of thousands of households and often remain unknown for the users.
-A recent example is this slipshod [firewall implementation](https://www.inforisktoday.com/researcher-att-routers-be-easily-compromised-a-10255) that undermined the isolation of the home network.
+A recent example is this slipshod [firewall implementation](https://www.inforisktoday.com/researcher-att-routers-be-easily-compromised-a-10255) that undermined the isolation of many private networks.
 
 On the other side, formal verification techniques have grown strong enough to certify complete and practical systems.
 Such systems as a [compiler](http://compcert.inria.fr/), an operating
