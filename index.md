@@ -28,6 +28,9 @@ Moreover, we are witnessing a push for virtual network functions that can be dep
 Such popular NF as NAT however has proven hard to get right over time: the NAT on various Cisco devices can be [crashed](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2015-6271) or [hung](http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2013-1138) using carefully crafted inputs;
 similar problems exist in [Juniper’s NAT](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2014-3817), the NAT in [Windows Server](https://technet.microsoft.com/en-us/library/security/ms13-064.aspx), and NATs based on [NetFilter](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2014-9715).
 
+The bugs periodically reach consumers affecting hunderds of thousands of households and often remain unknown for the users.
+A recent example is this slipshod [firewall implementation](https://www.inforisktoday.com/researcher-att-routers-be-easily-compromised-a-10255) that undermined the isolation of the home network.
+
 On the other side, formal verification techniques have grown strong enough to certify complete and practical systems.
 Such systems as a [compiler](http://compcert.inria.fr/), an operating
 system [kernel](https://sel4.systems/), a distributed key value
