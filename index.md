@@ -24,19 +24,21 @@ More recently, they have also appeared in experimental [IP routers](http://route
 Moreover, we are witnessing a push for virtual network functions that can be deployed on general-purpose platforms on demand, much like virtual machines are being deployed in clouds.
 <br/>
 <a class="btn btn-primary hnfVSsnfBtn" data-toggle="collapse" href="#hnfVSsnf" aria-expanded="false" aria-controls="hnfVSsnf">
-Hardware NFs vs. software NFs
+Hardware NFs vs. Software NFs
 </a>
 <div class="collapse" id="hnfVSsnf">
 <div class="row">
-<div class="col-md-6">
-<div dir="rtl"> <h2> Hardware NF </h2> </div>
+<div class="col-md-5 text-right">
+<h2> Hardware NF </h2>
 </div>
-<div class="col-md-6">
+<div class="col-md-2 text-center">
+</div>
+<div class="col-md-5">
 <h2> Software NF </h2>
 </div>
 </div>
 <div class="row">
-<div class="col-md-4">
+<div class="col-md-3">
 <div dir="rtl">
 
 
@@ -49,10 +51,13 @@ Hardware NFs vs. software NFs
 <div class="col-md-2">
 <img class="glass" src="images/steel-cup.png" alt="Steel Cup"/>
 </div>
+<div class="col-md-2 text-center">
+<h1> VS </h1>
+</div>
 <div class="col-md-2">
 <img class="glass" src="images/paper-cup.png" alt="Paper Cup"/>
 </div>
-<div class="col-md-4">
+<div class="col-md-3">
 
 
 * Low unit cost
