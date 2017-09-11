@@ -61,3 +61,10 @@ table tr th :last-child, table tr td :last-child {
 .card-email {
     font-size: smaller;
 }
+
+.hnfVSsnfBtn {
+    background: transparent;
+    color: black;
+    text-decoration-line: underline;
+    text-decoration-style: dotted;
+}

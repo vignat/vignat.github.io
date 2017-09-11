@@ -22,12 +22,11 @@ We then demonstrate that formally proven correctness in this case does not come 
 Software <abbr title="Network Function">NF</abbr>s have always been popular in low-rate environments, such as home gateways or wireless access points.
 More recently, they have also appeared in experimental [IP routers](http://routebricks.org/) and [industrial middleboxes][brocade] that support multi-Gbps line rates.
 Moreover, we are witnessing a push for virtual network functions that can be deployed on general-purpose platforms on demand, much like virtual machines are being deployed in clouds.
-<p>
-<button class="btn btn-primary btn-lg btn-block" type="button" data-toggle="collapse" data-target="#snfvshnf" aria-expanded="false" aria-contraols="snfvshnf">
+<br/>
+<a class="btn btn-primary hnfVSsnfBtn" data-toggle="collapse" href="#hnfVSsnf" aria-expanded="false" aria-controls="hnfVSsnf">
 Hardware NFs vs. software NFs
-</button>
-</p>
-<div class="collapse" id="snfvshnf">
+</a>
+<div class="collapse" id="hnfVSsnf">
 <div class="row">
 <div class="col-md-6">
 <div dir="rtl"> <h2> Hardware NF </h2> </div>
@@ -61,6 +60,13 @@ Hardware NFs vs. software NFs
 * Recyclable
 * Needs no care
  
+</div>
+</div>
+<div class="row">
+<div class="col-md-12" align="right">
+
+Inspired by [this post](https://www.linkedin.com/pulse/technology-analogy-physical-virtual-network-functions-milind-kulkarni).
+
 </div>
 </div>
 </div>
@@ -159,21 +165,21 @@ arseniy.zaostrovnykh@epfl.ch
 <div class="col-md-2 text-center">
 <img class="card-img-top bumshot" src="images/headshots/solal_small.png" alt="Solal Pirelli"/>
 <h5 class="card-title">Solal Pirelli</h5>
-<p class="card-email"> <br/><a href="mailto:solal.pirelli@epfl.ch">solal.pirelli@epfl.ch
+<p class="card-email"><a href="mailto:solal.pirelli@epfl.ch">solal.pirelli@epfl.ch
 </a> </p>
 </div>
 
 <div class="col-md-2 text-center">
 <img class="card-img-top bumshot" src="images/headshots/luis_small.jpg" alt="Luis Pedrosa"/>
 <h5 class="card-title">Luis Pedrosa</h5>
-<p class="card-email"> <a href="mailto:luis.pedrosa@epfl.ch">luis.pedrosa@epfl.ch
+<p class="card-email"><a href="mailto:luis.pedrosa@epfl.ch">luis.pedrosa@epfl.ch
 </a> </p>
 </div>
 
 <div class="col-md-3 text-center">
 <img class="card-img-top bumshot" src="images/headshots/katerina_small.jpg" alt="Katerina Argyraki"/>
 <h5 class="card-title">Katerina Argyraki</h5>
-<p class="card-email"> <br/><a href="mailto:katerina.argyraki@epfl.ch">
+<p class="card-email"><a href="mailto:katerina.argyraki@epfl.ch">
 katerina.argyraki@epfl.ch
 </a> </p>
 </div>
@@ -181,7 +187,7 @@ katerina.argyraki@epfl.ch
 <div class="col-md-2 text-center">
 <img class="card-img-top bumshot" src="images/headshots/george_small.png" alt="George Candea"/>
 <h5 class="card-title">George Candea</h5>
-<p class="card-email"> <a href="mailto:george.candea@epfl.ch">george.candea@epfl.ch
+<p class="card-email"><a href="mailto:george.candea@epfl.ch">george.candea@epfl.ch
 </a> </p>
 </div>
 </div>
