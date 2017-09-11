@@ -80,9 +80,9 @@ Inspired by [this post](https://www.linkedin.com/pulse/technology-analogy-physic
 Such popular NF as NAT however has proven hard to get right over time: the NAT on various Cisco devices can be [crashed](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2015-6271) or [hung](http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2013-1138) using carefully crafted inputs;
 similar problems exist in [Juniper’s NAT](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2014-3817), the NAT in [Windows Server](https://technet.microsoft.com/en-us/library/security/ms13-064.aspx), and NATs based on [NetFilter](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2014-9715).
 
-The bugs periodically reach consumers affecting hunderds of thousands of households and often remain unknown for the users.
+The bugs periodically reach consumers affecting hundreds of thousands of households and often remain unknown for the users.
 A recent example is this [firewall implementation](https://www.inforisktoday.com/researcher-att-routers-be-easily-compromised-a-10255) that undermined the isolation of many private networks.
-Vigor certificstion would have flagged the missing physical interface check that lead to the possibility of the partial MAC bruteforce attack.
+Vigor certification would have flagged the missing physical interface check that lead to the possibility of the partial MAC brute-force attack.
 
 On the other side, formal verification techniques have grown strong enough to certify complete and practical systems.
 Such systems as a [compiler](http://compcert.inria.fr/), an operating
@@ -118,7 +118,7 @@ This is much easier.
 ### Results
 {::options parse_block_html="true" /}
 
-We compared key perofrmance characteristics of four NFs (see our [paper](vignat-paper.pdf) for details):
+We compared key performance characteristics of four NFs (see our [paper](vignat-paper.pdf) for details):
 *  Verified NAT - our verified VigNAT
 *  No-op forwarding is implemented on top of DPDK;
    it receives traffic on one port and forwards it out another port without any other processing.
