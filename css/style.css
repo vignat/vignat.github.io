@@ -68,3 +68,12 @@ table tr th :last-child, table tr td :last-child {
     text-decoration-line: underline;
     text-decoration-style: dotted;
 }
+
+.disclaimer {
+    text-align: center;
+    font-size: 2rem;
+    border: red;
+    border-style: dotted;
+    vertical-align: middle;
+    padding: 30px;
+}

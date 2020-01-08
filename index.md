@@ -2,6 +2,14 @@
 layout: default
 title: "VigNAT: A Formally Verified Performant NAT"
 ---
+{::options parse_block_html="true"/}
+<div class="disclaimer">
+
+Please visit [Vigor official page](https://vigor.epfl.ch) for the recent version.
+
+This page is left for archival purposes.
+
+</div>
 
 # {{ page.title }}
 
