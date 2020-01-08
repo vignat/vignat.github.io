@@ -5,7 +5,7 @@ title: "VigNAT: A Formally Verified Performant NAT"
 {::options parse_block_html="true"/}
 <div class="disclaimer">
 
-Please visit [Vigor official page](https://vigor.epfl.ch) for the recent version.
+Please visit the [Vigor official page](https://vigor.epfl.ch) for the recent version.
 
 This page is left for archival purposes.
 
